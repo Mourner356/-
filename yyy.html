@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给尹尹的小宇宙✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 柔粉色调色板 */
+        :root {
+            --pink-light: #FFF0F5;  /* 极淡粉 */
+            --pink-mid: #FFD6E7;    /* 主淡粉 */
+            --pink-accent: #FFB6C1; /* 强调粉 */
+            --text: #8A5A7C;        /* 紫调文字色 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--pink-light), #FFF9FB);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* 开场动画容器 */
+        #opening {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--pink-mid);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            animation: fadeOut 1s 3s forwards;
+        }
+        
+        @keyframes fadeOut {
+            to { opacity: 0; z-index: -1; }
+        }
+        
+        .days-counter {
+            font-size: 4rem;
+            color: var(--text);
+            text-shadow: 0 2px 10px rgba(255,182,193,0.6);
+            animation: float 2s infinite alternate;
+            font-weight: 700;
+        }
+        
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-20px); }
+        }
+        
+        .subtitle {
+            color: var(--text);
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: textAppear 1s 1.5s forwards;
+            font-weight: 700;
+        }
+        
+        @keyframes textAppear {
+            to { opacity: 1; }
+        }
+        
+        /* 主内容区 */
+        #main-content {
+            padding-top: 60vh; /* 确保开场动画后有滚动空间 */
+            padding-bottom: 200px;
+        }
+        
+        .section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: var(--text);
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 4px rgba(138,90,124,0.2);
+            font-weight: 700;
+        }
+        
+        h2 {
+            color: var(--text);
+            font-size: 2rem;
+            margin: 2rem 0;
+            font-weight: 700;
+        }
+        
+        .message-box {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(255,182,193,0.2);
+            border: 3px dashed var(--pink-accent);
+            transition: transform 0.3s ease;
+        }
+        
+        .message-box:hover {
+            transform: scale(1.02);
+        }
+        
+        p {
+            color: var(--text);
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin: 15px 0;
+            text-shadow: 0 1px 2px rgba(138,90,124,0.1);
+        }
+        
+        /* 吉伊照片展示 */
+        .chii-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .chii-item {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--pink-accent);
+            box-shadow: 0 5px 15px rgba(138,90,124,0.3);
+            transition: all 0.3s;
+        }
+        
+        .chii-item:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(138,90,124,0.5);
+        }
+        
+        .chii-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* 装饰元素 */
+        .heart {
+            position: absolute;
+            font-size: 1.8rem;
+            color: var(--pink-accent);
+            animation: fall 8s linear infinite;
+            z-index: 5;
+            user-select: none;
+        }
+        
+        @keyframes fall {
+            0% { transform: translateY(-50px) rotate(0deg); opacity: 0.8; }
+            100% { transform: translateY(120vh) rotate(360deg); opacity: 0; }
+        }
+        
+        /* 特殊滚动效果 */
+        .scroll-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 开场动画 -->
+    <div id="opening">
+        <div class="days-counter">1812 DAYS</div>
+        <div class="subtitle">尹尹与我的美好时光 ✨</div>
+    </div>
+
+    <!-- 主内容区 -->
+    <div id="main-content">
+        <!-- 第一屏内容 -->
+        <div class="scroll-section">
+            <div class="section">
+                <h1>💖 致我最爱的尹尹 💖</h1>
+                
+                <div class="message-box">
+                    <p>亲爱的尹尹～</p>
+                    <p>从相遇那天起的1812个日子里，</p>
+                    <p>你就像是我的星之卡比，吸走了我所有的不快乐✨</p>
+                    <p>愿未来的每一天都有甜甜的惊喜，</p>
+                    <p>就像你带给我的每一份快乐🍬</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第二屏内容 -->
+        <div class="scroll-section">
+            <div class="section">
+                <h2>嘟嘟嘟˘ᗜ˘</h2>
+                
+                <div class="chii-gallery">
+                    <div class="chii-item">
+                        <img src="https://z.wiki/u/3P5G1G" alt="可爱的吉伊照片">
+                    </div>
+                    <div class="chii-item">
+                        <img src="https://z.wiki/u/qNSEl2" alt="可爱的吉伊照片">
+                    </div>
+                    <div class="chii-item">
+                        <img src="https://z.wiki/u/vBxMtK" alt="可爱的吉伊照片">
+                    </div>
+                </div>
+                
+                <div class="message-box">
+                    <p>"你呀</p>
+                    <p>永远是我心中最温暖的存在"</p>
+                    <p>—— 爱你的盈盈</p>
+                    </div>
+                </div>
+                
+                <div class="message-box">
+                    <p>"（乱入</p>
+                    <p>即使是被王者做局也依旧不依不饶的玩下去”</p>
+                    <p>"˙³˙</p>
+                    <p>又想起我们一起被做局的时光了”</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第三屏内容 -->
+        <div class="scroll-section">
+            <div class="section">
+                <div class="message-box">
+                    <p>"有些友谊像星星 ✨</p>
+                    <p>即使看不见也在悄悄发光"</p>
+                    <p>—— 献给永远的尹尹</p>
+                </div>
+                
+                <div class="message-box">
+                    <p>1812天的默契</p>
+                    <p>1812次的笑容</p>
+                    <p>1812个祝福</p>
+                    <p>愿我们的友谊永远青春🌸</p>
+                </div>
+                
+                <div class="message-box">
+                    <p>❁⃘𖤣𖥧*ﾟ.</p>
+                    <p>点击发现隐藏的惊喜❤️</p>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <!-- 新增彩蛋文字 -->
+                <div class="egg-text">
+                    ~~王者约吗~~
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 动态装饰 -->
+    <script>
+        // 创建飘落符号
+        function createHearts() {
+            const symbols = ['✨', '🌸', '💖', '🌟', '❁', '🍬', '❤️'];
+            
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+                heart.classList.add('heart');
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 6 + 4) + 's';
+                heart.style.opacity = Math.random() * 0.4 + 0.1;
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                heart.style.animationDelay = Math.random() * 3 + 's';
+                document.body.appendChild(heart);
+            }
+        }
+        
+        // 滚动效果增强
+        function scrollEffect() {
+            const sections = document.querySelectorAll('.scroll-section');
+            
+            window.addEventListener('scroll', () => {
+                sections.forEach(section => {
+                    const bounding = section.getBoundingClientRect();
+                    const isVisible = bounding.top < window.innerHeight * 0.8 && bounding.bottom > 0;
+                    
+                    if (isVisible) {
+                        section.style.opacity = '1';
+                        section.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+        }
+        
+        // 初始化页面
+        window.onload = function() {
+            createHearts();
+            scrollEffect();
+            
+            // 初始化所有section的样式
+            const sections = document.querySelectorAll('.scroll-section');
+            sections.forEach((section, index) => {
+                section.style.opacity = index === 0 ? '1' : '0';
+                section.style.transform = index === 0 ? 'translateY(0)' : 'translateY(30px)';
+                section.style.transition = 'all 0.8s ease-out';
+            });
+        }
+    </script>
+</body>
+</html>
